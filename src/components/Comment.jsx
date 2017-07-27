@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class Comment extends Component {
-  render(){
+  render() {
+    const {comment} = this.props;
+    console.log(comment);
     return (
       <div>
-        <p>Lorem Ipsum blah blah blah blah</p>
+        <img src={comment.profile_pic}/>
+        <p>
+          <strong>{comment.username}</strong>
+          {comment.text}</p>
       </div>
     );
   }
