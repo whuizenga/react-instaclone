@@ -1,4 +1,5 @@
-import React, {Component} from React;
+import React, {Component} from 'react';
+import Post from './Post';
 
 class Posts extends Component {
   state = {
@@ -7,16 +8,16 @@ class Posts extends Component {
         id: 1,
         title: 'blah'
       }, {
-        id: 1,
+        id: 2,
         title: 'blah'
       }, {
-        id: 1,
+        id: 3,
         title: 'blah'
       }, {
-        id: 1,
+        id: 4,
         title: 'blah'
       }, {
-        id: 1,
+        id: 5,
         title: 'blah'
       }
     ]
