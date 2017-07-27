@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FaInstagram, FaUser, FaHeartO, FaCompass, FaSearch } from 'react-icons/lib/fa';
+import styled from 'styled-component';
 
 class Navbar extends Component{
-
   render(){
     return (
       <div>
