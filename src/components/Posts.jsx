@@ -1,26 +1,46 @@
 import React, {Component} from 'react';
+import Faker from 'faker';
 import Post from './Post';
+
+const fakePost = () => ({
+  id: Faker.random.uuid(),
+  user: {
+    username: Faker.internet.userName(),
+    profile_pic: Faker.image.image()
+  },
+  image: {
+    url: Faker.image.image()
+  },
+  caption: Faker.lorem.sentence(),
+  likes: [
+    {
+      username: Faker.internet.userName(),
+      profile_pic: Faker.image.image()
+    }
+  ],
+  comments: [
+    {
+      id: Faker.random.uuid(),
+      text: Faker.lorem.sentences(),
+      from: {
+        username: Faker.internet.userName(),
+        profile_pic: Faker.image.image()
+      }
+    }
+  ]
+});
+
 
 class Posts extends Component {
   state = {
-    posts: [
-      {
-        id: 1,
-        title: 'blah'
-      }, {
-        id: 2,
-        title: 'blah'
-      }, {
-        id: 3,
-        title: 'blah'
-      }, {
-        id: 4,
-        title: 'blah'
-      }, {
-        id: 5,
-        title: 'blah'
-      }
-    ]
+    posts: []
+  }
+  componentWillMount(){
+    const posts = [];
+    for(let i = 0; i < 6; i++){
+      posts.push(fakePost());
+    }
+    this.setState({posts});
   }
   render() {
     return (
